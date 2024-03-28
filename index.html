@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+<body>
+    <img src="images/logo-devcamp.png" id="logo" alt="Logotipo devCamp">
+    <h1>Checkpoint 8</h1>
+    <h2>¿Qué tipo de bucles hay en JS?</h2>
+    <p>
+    Los bucles en programción sirven para ejecutar un código varias veces. El bucle ejecutará el código mientras la condición expresada en el mismo de como resultado true. Los diferentes tipos de bucles en JavaScript son:
+    </p>
+    <p>
+    - for
+    </p> 
+    <p>
+    - while
+    </p>
+    <p>
+    - do…while
+    </p>
+    <p>
+    A continuación voy a exponer ejemplos de estos bucles y explicar su funcionamiento en lenguaje JavaScript.
+    </p>
+    <p>
+    Un bucle for tiene la siguiente sintaxis:
+    </p>
+    <p class="bold">
+    for ([inicialización]); [condición]; [expresión-final]) {
+       // sentencias de código a ejecutar
+    }
+    </p>
+    <p>
+    Inicialización: Sucede antes de la primera ejecución del bucle. Esta expresión es comúnmente utilizada para crear contadores. Las variables creadas tienen un alcance (scope) limitado al cuerpo del bucle. Una vez que el bucle ha terminado su ejecución las variables son destruidas.
+    </p>
+    <p>
+    Condición: Expresión que es evaluada antes de la ejecución de cada iteración. Si se omite, esta expresión es evaluada como verdadera. Si devuelve true, la sentencia del cuerpo del bucle se ejecuta. Si devuelve false, el bucle se detiene.
+    </p>
+    <p>
+    Expresión-final: Expresión que se ejecuta luego de cada iteración. Usualmente es utilizada para incrementar un contador. Pero también puede ser utilizada para decrementar el contador.
+    </p>
+    <p>
+    Sentencia o declaración de código a ejecutar:  Código que será ejecutado repetidamente por el bucle.
+    </p>
+    <p>
+    Ejemplo:
+    </p>
+    <p class="bold">
+    for (let contador = 1; contador < 11; contador++) {
+    </p>
+    <p class="bold margin-l">
+        console.log(contador)
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Este bucle imprime los número del 1 al 10. Lo primero que hacemos es crear la variable "contador" y la iniciamos en 1, después establecemos la condición que se verifica en cada vuelta del bucle (mietras ésta sea true el bucle seguirá ejecutando el bloque de código) en este caso es "contador < 11", a continuación se establece la expresión que se ejecuta después de cada iteración es decir el contador se incremente en 1 y por último escribimos el bloque de código que se ejecuta mientras la condición del bucle sea true.
+    </p>
+    <p>
+    Ejercicio 1: Escribe un programa que imprima los números del 1 al 100.
+    </p>
+    <p>
+    Ejercicio 2: Escribe un programa que imprima "Hola jugador 1" en la primera vuelta, "Hola jugador 2" en la segunda y así sucesivamente hasta "Hola jugador 20".
+    </p>
+    <p>
+    También se puede utilizar la palabra clave "break" para salir del bucle antes de que la condición del mismo sea false.
+    </p>
+    <p>
+    El bucle for…in sirve para recorrer los elementos iterables de un objeto o array. La sintaxis es la siguiente:
+    </p>
+    <p class="bold">
+    var lista_animales = ["perro", "caballo", "burro", "camello", "leon"]
+    </p>
+    <p class="bold">
+    for (indice in lista_animales) {
+    </p>
+    <p class="bold margin-l">
+        console.log(lista_animales[indice])
+    </p>
+    <p class="bold">
+    }
+    </p>
+    </p>
+    Resultado:
+    <p class="bold">
+    perro
+    caballo
+    burro
+    camello
+    leon
+    </p>
+    <p class="bold">
+    var playas = {
+    </p>
+    <p class="bold margin-l">
+        "Lafitenia": 300,
+    </p>
+    <p class="bold margin-l">
+        "Ondarraitz": 3000,
+    </p>
+    <p class="bold margin-l">
+        "La concha": 2000,
+    </p>
+    <p class="bold margin-l">
+        "Los bateles": 400
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p class="bold">
+    for (nombre_playa in playas) {
+    </p>
+    <p class="bold margin-l">
+        console.log(`${nombre_playa} tiene ${playas[nombre_playa]} metros de longitud.`)
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p>
+    <p class="bold">
+    Lafitenia tiene 300 metros de longitud.
+    Ondarraitz tiene 3000 metros de longitud.
+    La concha tiene 2000 metros de longitud.
+    Los bateles tiene 400 metros de longitud.
+    </p>
+    
+    <p>
+    En el primero de los bucles recorremos los elementos de la lista_animales y los imprimimos. En el segundo recorremos los elementos de un objeto conteniendo los nombres de algunas playas, su longitud e imprimimos dichos datos.
+    </p>
+    <p>
+    Ejercicio 3: imprime los siguientes elementos de esta lista con un bucle for…in. lista_muebles = ["armario", "mesa", "silla", "sofa", "mesilla de noche"]
+    </p>
+    <p>
+    <p>
+    Ejercicio 4: imprime los nombres de los instrumentos del siguiente objeto y el tipo del que se tratan. Por ejemplo "Guitarra es un instrumento de cuerda."
+    </p>
+    <p class="bold">
+    var instrumentos = {
+
+    <p class="bold margin-l">
+        "Guitarra" : "cuerda",
+    </p> 
+    <p class="bold margin-l">
+        "Batería" : "percusión",
+    </p>
+    <p class="bold margin-l">
+        "Bajo" : "cuerda",
+    </p>
+    <p class="bold margin-l">
+        "Cajon" : "percusión",
+    </p>
+    <p class="bold margin-l">
+        "Maracas" : "percusión",
+    </p>
+    <p class="bold margin-l">
+        "Flauta" : "viento"
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Por otro lado la sintaxis del bucle while es la siguiente:
+    </p>
+    <p class="bold">
+    while (condicion) {
+    </p>
+    <p class="bold margin-l">
+      sentencia(s);
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Para imprimir los número del 1 al 10 con un bucle while podríamos hacer lo siguiente:
+    </p>
+    <p class="bold">
+    var contador = 1
+    </p>
+    <p class="bold">
+    while (contador < 11) {
+    </p>
+    <p class="bold margin-l">
+        console.log(contador)
+    </p>
+    <p class="bold margin-l">
+        contador++
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    </p>
+    <p>
+    Hay que tener en cuenta en este tipo de bucles que el contador se debe incretementar o reducir, según la condición establecida, ya que si no nos encontrariamos frente a un bucle infinito.
+    </p>
+    <p>
+    Ejercicio 5: imprime los números del 1 al 100 utilizando un bucle while.
+    </p>
+    <p>
+    Ejercicio 6: imprime los números del 1 al 100 excepto los multiplos de 3 utilizando un bucle while.
+    </p>
+    <p>
+    Por último tenemos el bucle do…while. Este bucle ejecuta la declaración primero y después evalúa la condición. Su sintaxis es la siguiente:
+    </p>
+    <p class="bold">
+    do {
+    </p>
+    <p class="bold margin-l">
+       sentencia o declaración a ejecutar;
+    </p>
+    <p class="bold">
+    } while (condicion);
+    </p>
+    <p>
+    Por ejemplo vamos a imprimir los número del 1 al 10 con un bucle do…while:
+    </p>
+    <p class="bold">
+    var contador = 1
+    </p>
+    <p class="bold">
+    do {
+    </p>
+    <p class="bold margin-l">
+        console.log(contador)
+    </p>
+    <p class="bold margin-l">
+        contador++
+    </p>
+    <p class="bold">
+     } while (contador < 11);
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+    </p>
+    <p>
+    Ejercicio 7: crea un programa que imprima los número del 1 al 50 con un bucle do…while.
+    </p>
+    <p>
+    Podéis profundizar en los diferentes tipos de bulce en JavaScirpt en los siguientes enlaces:
+    </p>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Loops_and_iteration">mozilla developer</a>
+    <a href="https://www.freecodecamp.org/espanol/news/javascript-bucles-explicados-for-while-loops/">freecodecamp</a>
+    <a href="https://lenguajejs.com/fundamentos/bucles-e-iteraciones/que-son/">lenguaje JS</a>
+    <a href="https://es.javascript.info/while-for">es.JavScript</a>
+    
+    <div class="line"></div>
+
+    <h2>¿Cuáles son las diferencias entre const, let y var?</h2>
+    <p>
+    Las variables definidas con "var" tienen un ámbito global o un ámbito local en función de donde hayan sido declaradas. Voy a poner un ejemplo donde definimos una variable var con disposición global y una segunda local por encontrarse dentro de una función:
+    </p>
+    <p class="bold">
+    var saludo = "Hola a todos, soy una variable global!"
+    </p>
+    <p class="bold">
+    function saludar() {
+    </p>
+    <p class="bold">
+    var saludo = "Hola a todos, soy una variable local!"
+    </p>
+    <p class="bold margin-l">
+    console.log(saludo)
+    </p>
+    <p class="bold">
+    }
+    </p>
+<p class="bold">
+saludar()
+</p>
+<p class="bold">
+console.log(saludo)
+</p>
+<p>
+Resultado:
+</p>
+<p class="bold">
+Hola a todos, soy una variable local!
+Hola a todos, soy una variable global!
+</p>
+<p>
+Como podéis ver hemos creado dos variables con el mismo nombre pero una es de ámbito global y la otra sólo existe dentro de la función. Otra de las propiedades de las variables var es que se puede volver a declarar. Podemos hacer lo siguiente:
+</p>
+<p class="bold">
+var animal = "gato"
+</p>
+<p class="bold">
+var animal = "perro"
+</p>
+<p>
+O también:
+</p>
+<p class="bold">
+var animal = "jirafa"
+</p>
+<p class="bold">
+animal = "leon"
+</p>
+<p>
+El hositing de las variables var significa que independientemente del lugar donde se creen JavaScript muebe su declaración a la parte superior.  Ejemplo:
+</p>
+<p class="bold">
+console.log (saludo);
+</p>
+<p class="bold">
+var saludo = " hola";
+</p>
+<p>
+JavaScript lo interpreta así:
+</p>
+<p class="bold">
+var saludo;
+</p>
+<p class="bold">
+console.log(saludo); // saludo is undefined
+</p>
+<p class="bold">
+saludo = "hola"
+</p>
+<p>
+El segundo tipo de variables que tenemos es las de tipo bloque denominadas "let". Un bloque es un trozo de código delimitado por {}. Un bloque vive entre llaves. Todo lo que está dentro de llaves es un bloque.
+</p>
+<p>
+Así que una variable declarada en un bloque con let  solo está disponible para su uso dentro de ese bloque. Permíteme explicar esto con un ejemplo:
+</p>
+<p class="bold">
+let saludo = "Hola";
+</p>
+<p class="bold">
+let contador = 4;
+</p>
+<p class="bold">
+if (contador > 3) {
+</p>
+<p class="bold margin-l">
+        let hola = "Hola tambien";
+</p>
+<p class="bold margin-l">
+        console.log(hola);// "Hola tambien"
+</p>
+<p class="bold">
+}
+</p>
+<p class="bold">
+console.log(hola) // hola is not defined
+</p>
+<p>
+Vemos que el uso de hola fuera de su bloque (las llaves donde se definió) devuelve un error. Esto se debe a que las variables let tienen un alcance de bloque.
+</p>
+<p>
+Let puede modificarse pero no volver a declararse. Es decir si declaramos una variable let dentro del mismo ámbito dos veces el programa nos dará error. Esto no se puede:
+</p>
+<p class="bold">
+let animal = "perro";
+</p>
+<p class="bold">
+let animal = "gato";
+</p>
+<p>
+Lo siguientes si es posible con let:
+</p>
+<p class="bold">
+let animal = "perro";
+</p>
+<p class="bold">
+animal = "jirafa";
+</p>
+<p>
+Sin embargo, si la variable let se crea en diferentes ámbitos no nos dará error:
+</p>
+<p class="bold">
+let animal = "perro";
+</p>
+<p class="bold">
+function nombre_funcion () {
+</p>
+<p class="bold margin-l">
+    let animal = "zorro";
+</p>
+<p class="bold margin-l">
+    console.log(animal);
+</p>
+<p class="bold">
+}
+</p>
+<p class="bold">
+console.log(animal);
+</p>
+<p class="bold">
+nombre_funcion()
+</p>
+<p>
+Resultado:
+</p>
+<p class="bold">
+perro
+zorro
+</p>
+<p>
+A diferencia con las variables var, las variables let no se inicializan al principio del programa por JavaScript. Si intentas usar una variable let antes de declararla obtendrás el error "Reference Error".
+</p>
+<p>
+Las variables declaradas con const mantienen valores constantes. Las declaraciones const tienen un ámbito de bloque al igual que las variables let, es decir, sólo se pueden acceder dentro del bloque donde fueron creadas. 
+</p>
+<p>
+Const no puede modificarse ni volver a declararse. Lo siquiente no se puede con const:
+</p>
+<p class="bold">
+const saludo = "Hola";
+</p>
+<p class="bold">
+saludo = "Hola tambien";// error: Assignment to constant variable. 
+</p>
+<p>
+Esto tampoco:
+</p>
+<p class="bold">
+const saludo = "Hola";
+</p>
+<p class="bold">
+const saludo = "Hola tambien";// error: Identifier 'saludar' has already been declared
+</p>
+<p>
+Al igual que let, las declaraciones const se elevan a la parte superior, pero no se inicializan.
+</p>
+<p>
+Por último, expongo las diferencias entre los tipos de variable:
+</p>
+<p>
+•	Las declaraciones var tienen un ámbito global o un ámbito función/local, mientras que let y const tienen un ámbito de bloque.
+</p>
+<p>
+•	Las variables var pueden ser modificadas y re-declaradas dentro de su ámbito; las variables let pueden ser modificadas, pero no re-declaradas; las variables const no pueden ser modificadas ni re-declaradas.
+</p>
+<p>
+•	Todas ellas se elevan a la parte superior de su ámbito. Pero mientras que las variables var se inicializan con undefined, let y const no se inicializan.
+</p>
+<p>
+•	Mientras que var y let pueden ser declaradas sin ser inicializadas, const debe ser inicializada durante la declaración.
+</p>
+<p>
+Podéis profundizar en los siguientes enlaces sobre los tipos de variables:
+</p>
+<a href="https://www.freecodecamp.org/espanol/news/var-let-y-const-cual-es-la-diferencia/">freecodecamp.org</a>
+<a href="https://platzi.com/comunidad/cual-es-la-diferencia-entre-var-let-y-const/">platzi.com</a>
+<a href="https://codigoconjuan.com/diferencias-var-let-y-const/">condigoconjuan.com</a>
+<a href="https://estradawebgroup.com/Post/Var--Let-y-Const-en-JavaScript---cual-es-la-diferencia-/20375">estradawebgroup.com</a>
+
+
+    <div class="line"></div>
+
+    <h2>¿Qué es una función de flecha?</h2>
+
+    <p>
+    Las funciones flecha son una forma de crear funciones con una sintaxis abreviada. Se delcaran de la siguiente manera:
+    </p>
+    <p class="bold">
+    var nombre_funcion = (parametros) => {
+    </p>
+    <p class="bold maring-l">
+	código a ejecutar
+    </p>
+    <p class="bold">
+    } 
+    </p>
+    <p>
+    Para llamar a esta función se haría de la siguiente forma:
+    </p>
+    <p class="bold">
+    nombre_funcion()
+    </p>
+    <p>
+    Los paréntesis no son obligatorios si sólo tenemos un parámetro, las llaves tampoco si sólo hay una línea de código en el cuerpo del bucle y el return viene implicito en este caso. Ejemplo:
+    </p>
+    <p class="bold">
+    var nombre_funcion = saludo => 'Hola'
+    </p>
+    <p class="bold">
+    console.log(nombre_funcion())
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    Hola
+    </p>
+    <p>
+    Ahora voy a mostrar un ejemplo con dos parámetros y un bloque de código con más lineas:
+    </p>
+    <p class="bold">
+    var saludo = (texto_saludo, nombre) => {
+    </p>
+    <p class="bold margin-l">
+	var mensaje = texto_saludo + ' ' + nombre
+    </p>
+    <p class="bold margin-l">
+    console.log(mensaje)
+    </p>
+    <p class="bold">
+    }
+    </p>
+
+    <p class="bold"> 
+    saludo('Hola', 'Juan')
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    Hola Juan
+    </p>
+
+    <p>
+    Si queremos que la función devuelva algo con la palabra clave "return" debemos usar las llaves {}.
+    </p>
+    <p>
+    Por otro lado, si lo que queremos es devolver un objeto éste tiene que ir entre paréntesis:
+    </p>
+    <p class="bold">
+    posicion =>({ 'Mark': posicion })
+    </p>
+    <p>
+    Es importante notar que las funciones flecha son anónimas, lo que significa que no tienen nombre.
+    </p>
+    <p>
+    Este anonimato crea algunos problemas:
+    </p>
+    <p>
+    - Más difíciles de depurar
+    </p>
+    <p>
+    Cuando obtengas un error, no serás capaz de rastrear el nombre de la función o el número de línea exacto donde ocurrió.
+    </p>
+    <p>
+    - Sin autorreferencia
+    </p>
+    <p>
+    Si tu función necesita tener autorreferencia en algún punto (por ejemplo, recursión, controlador de evento que necesita desvincularse), no funcionará.
+    </p>
+    <p>
+    En estos caso no podemos utilizar la funciones flecha:
+    </p>
+    <p>
+    Métodos de objetos
+    </p>
+    <p>
+    Funciones callback con contexto dinámico
+    </p>
+    <p>
+    Cuando hace tu código menos legible
+    </p>
+    <p>
+    Ejercicio 8: crea una función flecha mediante una variable llamada "gato", que no tenga argumentos y devuelva la cadena "Miaaauuu" sin usar la palabra return. Después haz que muestre el mensaje devuelto por la función en la consola.
+    </p>
+    <p>
+    Ejercio 9: crea una función flecha, denominala con el nombre suma mediante una variable const, haz que contenga dos parametros, dentro del cuerpo de la función crea una variable local let llamada suma_numeros, haz la operación con los dos parámetros, la función tiene que devolver suma_numeros con el resultado y fuera de la función haz una llamada a la misma haciendo que muestre en la consola el resultado.
+    </p>
+    <p>
+    Podéis profundizar sobre las funciones flecha a través de los siguientes enlaces:
+    </p>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Functions/Arrow_functions">developer.mozilla.org</a>
+    <a href="https://es.javascript.info/arrow-functions-basics">es.javascript</a>
+    <a href="https://www.freecodecamp.org/espanol/news/cuando-y-por-que-debes-usar-las-funciones-flecha-de-es6-y-cuando-no/">freecodecamp.org</a>
+
+    <div class="line"></div>
+
+    <h2>¿Qué es la deconstrucción de variables?</h2>
+    <p>
+    La desestructuración es una expresión de JavaScript que hace posible extraer valores de las propiedades de objetos o arrays en otras variables. Por ejemplo vamos a hacer una deconstrucción del siguiente array:
+    </p>
+    <p class="bold">
+    let animales = ["gato", "vaca", "gallina", "leon", "serpiente"]
+    </p>
+    <p class="bold">
+    let [animal1, animal2, animal3, animal4, animal5] = animales
+    </p>
+    <p class="bold">
+    console.log(animal1)
+    </p>
+    <p class="bold">
+    console.log(animal2)
+    </p>
+    <p class="bold">
+    console.log(animal3)
+    </p>
+    <p class="bold">
+    console.log(animal4)
+    </p>
+    <p class="bold">
+    console.log(animal5)
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    gato
+    vaca
+    gallina
+    leon    
+    serpiente
+    </p>
+    <p>
+    También se podría hacer de la siguiente manera:
+    </p>
+    <p class="bold">
+    let [animal1, animal2, animal3, animal4, animal5] = ["gato", "vaca", "gallina", "leon", "serpiente"]
+    </p>
+    <p>
+    Si queremos excluir algunos elementos podemos utilizar la coma ",":
+    </p>
+    <p class="bold">
+    let [,animal1,,animal3] = ["gato", "vaca", "gallina", "leon", "serpiente"]
+    </p>
+    <p class="bold">
+    console.log(animal1); // "vaca"
+    </p>
+    <p class="bold">
+    console.log(animal3); // "leon" 
+    </p>
+    <p>
+    También podemos hacer esto:
+    </p>
+    <p class="bold">
+    let [animal1,…resto_animales] =["gato", "vaca", "gallina", "leon", "serpiente"]
+    </p>
+    <p class="bold">
+    console.log(animal1); // "gato"
+    </p>
+    <p class="bold">
+    console.log(resto_animales); // ["vaca", "gallina", "leon", "serpiente"]
+    </p>
+    <p>
+    También podemos deconstruir objetos. En el siguiente ejemplo vemos como:
+    </p>
+    <p>
+    let persona = {nombre: "Sara", pais: "Nigeria", trabajo: "Desarrolladora"};
+    </p>
+    <p>
+    let {nombre, pais, trabajo} = persona;
+    </p>
+    <p>
+    console.log(nombre); // "Sara"
+    </p>
+    <p>
+    console.log(pais); // "Nigeria"
+    </p>
+    <p>
+    console.log(trabajo); // "Desarrolladora"
+    </p>
+    <p>
+    Ejercicio 10: Deconstruye el siguiente array con el nombre de estas tres variables en el orden que se muestran: nombre, apellido, edad y género. let persona = ["Andrea", "Sanchez", 34, "mujer"].
+    </p>
+    <p>
+    Ejercicio 11: Deconstruye el siguiente objeto utilizando los nombre de variable nombre, apellido, edad y género.
+    </p>
+    <p class="bold">
+    let persona = {
+    </p>
+    <p class="bold margin-l">
+	"nombre" : "Andrea",
+    </p> 
+    <p class="bold margin-l">
+	"apellido" : "Sanchez",
+    </p>
+    <p class="bold margin-l">
+	"edad" : 34,
+    </p>
+    <p class="bold margin-l">
+	"genero" : "mujer"
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Encontraréis más información con respecto a la deconstrucción de variables en esto enlaces:
+    </p>
+    <a href="https://www.freecodecamp.org/espanol/news/como-usar-la-desestructuracion-de-arreglos-y-objetos-en-javascript/">freecodecamp.org</a>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">developer.mozilla.com</a>
+    <a href="https://carlosescorche.com/blog/desestructuracion-de-objetos-en-javascript">carlosescorche.com</a>
+    
+    <div class="line"></div>
+
+    <h2>¿Qué hace el operador de extensión en JS?</h2>
+
+    <p>
+    El operador de extensión en JS también conocido como los tres puntos (…), es un operador que permite expandir una expresión donde se esperan multiples argumentos. En el siguiente ejemplo vamos a ver como se usa y su sintaxis:
+    </p>
+    <p class="bold">
+    var numeros = [1, 2, 3, 4, 5, 6, 7]
+    </p>
+    <p class="bold">
+    console.log(…numeros)
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    1 2 3 4 5 6 7 
+    </p>
+    <p>
+    Tamibén podemos utilizarlo para añadir elementos de un array a otro array. En el siguiente ejemplo tenemos un array con los nombres de los jugadores de un equipo de futbol y en otro array con los nuevos fichajes. Al incorporación de los nuevos jugadores al primer array:
+    </p>
+    <p class="bold">
+    var jugadores_equipo = ["Pepe", "Juan", "Luis", "Francisco", "Paco"]
+    </p>
+    <p class="bold">
+    var fichajes = ["Mark", "Yakamura"]
+    </p>
+    <p class="bold">
+    jugadores_equipo.push(…fichajes)
+    </p>
+    <p class="bold">
+    console.log(jugadores_equipo)
+    </p>
+    <p class="bold">
+    Resultado:
+    </p>
+    <p class="bold">
+    [ 'Pepe', 'Juan', 'Luis', 'Francisco', 'Paco', 'Mark', 'Yakamura' ]
+    </p>
+    <p>
+    Se podría hacer esto mismo sin tener que usar "push" para controlar donde meter los elementos que queremos incorporar:
+    </p>
+    <p class="bold">
+    var fichajes = ["Mark", "Yakamura"]
+    </p>
+    <p class="bold">
+    var jugadores_equipo = ["Pepe", "Juan", …fichajes, "Luis", "Francisco", "Paco"]
+    </p>
+    <p class="bold">
+    console.log(jugadores_equipo)
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    [ 'Pepe', 'Juan', 'Mark', 'Yakamura', 'Luis', 'Francisco', 'Paco' ]
+    </p>
+    <p>
+    Para eliminar elementos duplicados podemos conseguirlo utilizando el elemento "set" y el operador de expansión:
+    </p>
+    <p>
+    var numeros = [12, 9, 36, 22, 9, 36]
+    </p>
+    console.log([…new Set(numeros)])
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    [ 12, 9, 36, 22 ]
+    </p>
+    <p>
+    Este operador también se puede aplicar a objetos:
+    </p>
+    <p class="bold">
+    var diseño = {
+    </p>
+    <p class="bold margin-l">
+	color: "negro",
+    </p>
+    <p class="bold margin-l">
+	carroceria: "sport",
+    </p>
+    <p class="bold margin-l">
+	ruedas: "pirelli",
+    </p>
+    <p class="bold">
+    }
+    </p>
+
+    <p class="bold">
+    var origen = {
+    </p>
+    <p class="bold margin-l">
+	pais: "Francia",
+    </p>
+    <p class="bold margin-l">
+	componentes: "Alemania",
+    </p>
+    <p class="bold">
+    }
+    </p>
+
+    <p class="bold">
+    var coche = {…diseño, …origen}
+    </p>
+    <p class="bold">
+    console.log(coche)
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    {
+    </p>
+    <p class="bold margin-l">
+    color: 'negro',
+    </p>
+    <p class="bold margin-l">
+    carroceria: 'sport',
+    </p>
+    <p class="bold margin-l">
+    ruedas: 'pirelli',
+    </p>
+    <p class="bold margin-l">
+    pais: 'Francia',
+    </p>
+    <p class="bold margin-l">
+    componentes: 'Alemania'
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Ejercicio 12: añade los elementos de este array var nuevos_muebles = ["sofa", "cama"] al array var casa = ["mesa", "silla", "armario"] utilizando push y el operador de extensión de JavaScript.
+    </p>
+    <p>
+    Podéis encontrar más información en relación al operador de extensión en esto enlaces:
+    </p>
+    <a href="https://kinsta.com/es/base-de-conocimiento/operador-javascript-spread/">kinsta.com</a>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Spread_syntax">developer.mozilla.org</a>
+    <a href="https://dinogeek.me/ES/JavaScript/Que-es-el-operador-de-extension-en-JavaScript.html">dinogeek.me</a>
+    <a href="https://edgarjayo.wordpress.com/2020/09/08/spread-operator-en-javascript/">edgarjayo.wordpress.com</a>
+
+    <div class="line"></div>
+    <h2>¿Qué es la programación orientada a objetos?</h2>
+
+    <p>
+    La Programación Orientada a Objetos (POO) es un paradigma de programación, es decir, un modelo o un estilo de programación que nos da unas guías sobre cómo trabajar con él. Se basa en el concepto de clases y objetos. Este tipo de programación se utiliza para estructurar un programa de software en piezas simples y reutilizables de planos de código (clases) para crear instancias individuales de objetos. 
+    </p>
+    <p>
+    Con el paradigma de Programación Orientado a Objetos lo que buscamos es dejar de centrarnos en la lógica pura de los programas, para empezar a pensar en objetos, lo que constituye la base de este paradigma. Esto nos ayuda muchísimo en sistemas grandes, ya que en vez de pensar en funciones, pensamos en las relaciones o interacciones de los diferentes componentes del sistema.
+    </p>
+    <p>
+    Un programador diseña un programa de software organizando piezas de información y comportamientos relacionados en una plantilla llamada clase. Luego, se crean objetos individuales a partir de la plantilla de clase. Todo el programa de software se ejecuta haciendo que varios objetos interactúen entre sí para crear un programa más grande.
+    </p>
+    <p>
+    JavaScript se diferencia de otros lenguajes de programcióne en cuanto a la POO, cada objeto tiene un prototipo, que es otro objeto del que hereda propiedades y métodos. Esto permite a los objetos compartir comportamiento entre sí de manera eficiente, en lugar de tener que definir todas sus propiedades y métodos individualmente.
+    </p>
+    <p>
+    Por ejemplo, podemos crear un objeto persona que tenga un prototipo personaProto:
+    </p>
+    <p class="bold">
+    const personaProto = {
+    </p>
+    <p class="bold margin-l">
+    greet() {
+    </p>
+    <p class="bold margin-l-80 ">
+    console.log('Hello!');
+    </p>
+    <p class="bold margin-l">
+    },
+    </p>
+    <p class="bold">
+    };
+    </p>
+    <p class="bold">
+    const persona = Object.create(personaProto);
+    </p>
+    <p>
+    En este caso, el objeto persona hereda el método greet() del objeto personaProto. Luego, podemos llamar al método greet() en el objeto persona:
+    </p>
+    <p class="bold">
+    person.greet();
+    </p>
+    <p>
+    Resultado:
+    </p>
+    <p class="bold">
+    Hello!
+    </p>
+    <p>
+    La POO se basa en cuatro principios fundamentales: abstracción, encapsulamiento, herencia y polimorfismo.
+    </p>
+    <p>
+    Abstracción
+    </p>
+    <p>
+    En JavaScript se refiere a la habilidad de un programa para manipular y trabajar con objetos de manera genérica, sin tener que conocer los detalles de su implementación concreta. Esto permite escribir código que se pueda aplicar a diferentes tipos de objetos, y no solo a uno en particular.
+    </p>
+    <p>
+    Sería como tomar lo esencial de un objeto para luego, a partir de este, crear otros y agregar características. De acuerdo a esto, lo "esencial" varía de acuerdo al contexto o finalidad de la aplicación que se realiza.
+    </p>
+    <p>
+    class Animal {
+    </p> 
+    <p class="bold margin-l">
+    constructor(name) {
+    </p>
+    <p class="bold margin-l-80">
+    this.name = name;
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p class="bold">
+    speak() {
+    </p>
+    <p class="bold margin-l">
+    console.log(`${this.name} hace un sonido.`);
+    </p>
+    <p class="bold margin-l">
+    }
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    En el ejemplo (muy muy simple) se puede ver que lo más básico que necesitaría es un nombre para un animal y un método “speak” para luego a partir de estos crear otros animales en otras clases. Lo verán más adelante en la herencia.
+    </p>
+    <p>
+    Encapsulamiento
+    </p>
+    <p>
+    Es un principio de programación que consiste en ocultar los detalles de implementación de una clase o objeto, y exponer solo la interfaz necesaria para que otros componentes puedan interactuar con él. De esta manera, se garantiza que los componentes dependan solo de la interfaz de la clase o objeto, y no de su implementación concreta.
+    </p>
+    <p>
+    Para acceder a estas propiedades y métodos "ocultos" se pueden usar getters y setters:
+    </p>
+    <p>
+    Los getters son funciones que se utilizan para obtener el valor de una propiedad de un objeto
+    </p>
+    <p>
+    Los setters son funciones que se utilizan para establecer un nuevo valor para una propiedad de un objeto.
+    </p>
+    <p>
+    Herencia
+    </p>
+    <p>
+    Es un concepto de programación orientada a objetos que permite que una clase adquiera las propiedades y comportamientos de otra clase. En JavaScript, la herencia se logra mediante el uso de la palabra clave "extends" y permite que una clase hija herede las propiedades y métodos de una clase padre.
+    </p>
+    <p class="bold">
+    class Animal {
+    </p>
+    <p class="bold margin-l">
+    constructor(name) {
+    </p>
+    <p class="bold margin-l-80">
+    this.name = name;
+    </p>
+    <p class="bold margin-l">
+    }
+    </p>
+    <p class="bold margin-l">
+    speak() {
+    </p>
+    <p class="bold margin-l-80">
+    console.log(`${this.name} hace un sonido.`);
+    </p>
+    <p class="bold-margin-l">
+    }
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p class="bold">
+    class Dog extends Animal {
+    </p>
+    <p class="bold margin-l">
+    constructor(name, type) {
+    </p>
+    <p class="bold margin-l-80">
+    super(name);
+    </p>
+    <p class="bold margin-l-80">
+    this.type = type;
+    </p>
+    <p class="bold margin-l">
+    }
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    En el ejemplo la clase Dog toma el método “speak” y la propiedad “name” de la clase Animal y adicionalmente añade otra propiedad “type”.
+    </p>
+    <p>
+    Polimorfismo
+    </p>
+    <p>
+    Es un concepto de la programación orientada a objetos que se refiere a la habilidad de una función o método para tratar objetos de diferentes tipos de manera diferente. Esto permite a una función o método tener comportamientos diferentes dependiendo del tipo de objeto con el que se llame.
+    </p>
+    <p>
+    En JavaScript, el polimorfismo se puede lograr mediante la herencia y la sobrecarga de métodos. La herencia se refiere a la capacidad de una clase hija de heredar las propiedades y métodos de una clase padre, y luego modificarlos o extenderlos para adaptarse a sus necesidades. La sobrecarga de métodos se refiere a la capacidad de una clase de tener múltiples implementaciones de un mismo método, con diferentes parámetros o tipos de retorno.
+    </p>
+    <p>
+    Si queréis profundizar más en la programación orientada a objetos podéis consultar los siguientes enlaces:
+    </p>
+    <a href="https://www.freecodecamp.org/espanol/news/programacion-orientada-a-objectos-en-javascript-explicado-con-ejemplos/">freecodecamp.org</a>
+    <a href="https://bluuweb.github.io/desarrollo-web-bluuweb/11-11-js-poo/">bluuweb.github.io</a>
+    <a href="https://profile.es/blog/que-es-la-programacion-orientada-a-objetos/">profile.es</a>
+
+    <div class="line"></div>
+
+    <h2>¿Qué es una promesa en JS?</h2>
+    <p>
+    Una promesa es un objeto que representa la terminación existosa o no de una operación asíncrona. También las promesas proporcionan métodos que facilitan el manejo y manipulación de los datos una vez la promesa se ha resuelto.
+    </p>
+    <p>
+    Algunos de los métodos de las promesas en JavaScript son:
+    </p>
+    <p>
+    •	.then(): Este método se utiliza para manejar el resultado exitoso de una promesa. Recibe una función que se ejecutará cuando la promesa se resuelva con éxito y puede recibir el resultado como argumento.
+    </p>
+    <p>  
+    •	.catch(): Se utiliza para manejar errores que puedan ocurrir durante la ejecución de la promesa. Puedes encadenar .catch() después de .then() para manejar errores específicos.
+    </p>
+    <p>
+    •	.finally(): Este método se utiliza para ejecutar una función después de que la promesa se resuelva o se rechace, independientemente del resultado. Es útil para realizar tareas de limpieza o acciones que deben ocurrir sin importar el resultado de la promesa.
+    </p>
+    <p>
+    •	Promise.all(iterable): Este método permite manejar múltiples promesas al mismo tiempo y resuelve una promesa una vez que todas las promesas del iterable se hayan resuelto o alguna de ellas se haya rechazado.
+    </p>
+    <p>
+    •	Promise.race(iterable): Este método resuelve una promesa tan pronto como una de las promesas en el iterable se resuelva o se rechace. Es útil cuando deseas obtener el resultado más rápido de múltiples promesas.
+    </p>
+    <p>
+    Los estados de las promesas en JavScript son los siguientes:
+    </p>
+    <p>
+    Pendiente (pending). Es el estado inicial al crear una promesa.
+    </p>
+    <p>
+    Resuelta con éxito (fulfilled). Estará resuelta en el momento que llamemos a resolve y, a continuación, se ejecutará la función que pasamos al método .then. Debemos de tener en cuenta que, una vez resuelta, no podremos modificar el valor de la promesa, aunque sí podríamos correr la misma instrucción para obtener un valor distinto y hacerlo las veces que deseemos.
+    </p>
+    <p>
+    Rechazada (rejected). También puede ocurrir que se complete pero sea rechazada por un error, pasando a continuación a ejecutar la función que pasamos a .catch.
+    </p>
+    <p>
+    Se puede crear una promesa con el constructor "promise" y pasándole una función con dos parámetros: resolve y reject, que nos indica si ha sido resulta o rechazada.
+    </p>
+    <p class="bold">
+    const promise = new Promise((resolve, reject) => {
+    </p>
+    <p class="bold margin-l">
+    const number = Math.floor(Math.random() * 12);
+    </p>
+    <p class="bold margin-l">
+    setTimeout(() => number > 4 ? resolve(number) : reject(new Error('Menor a 4')), 2000);
+    </p>
+    <p class="bold">                
+    });
+    </p>
+    <p class="bold">
+    promise
+    </p>
+    <p class="bold margin-l">
+    .then(number => console.log(number))
+    </p>
+    <p class="bold margin-l">
+    .catch(error => console.error(error));
+    </p>
+    <p>
+    En el ejemplo, hemos creado una promesa que se completará en 2 segundos. Si el número aleatorio que hemos generado es mayor a 4, se resolverá; en caso contrario, se rechaza y se muestra un error.
+    </p>
+    <p>
+    El archivo, que vamos a llamar texto.txt, devuelve una cadena con la ubicación de otro archivo y seguido de esto, queremos leer ese segundo archivo. Utilizando promesas, quedaría así:
+    </p>
+    <p class="bold">
+    readFile('./texto.txt')
+    </p>
+    <p class="bold margin-l">
+    .then(readFile)
+    </p>
+    <p class="bold margin-l">
+    .then(data => console.log(data))
+    </p>
+    <p class="bold margin-l">
+    .catch(error => console.error(error));
+    </p>
+    <p>
+    Lo que hacemos es leer texto.txt.
+    </p>
+    <p>
+    •	Si ocurre un error, la promesa se rechaza y mostramos el error con console.error.
+    </p>
+    <p>
+    •	Si lo lee, ejecutamos su lectura en el primer .then y corremos un nuevo readFile.
+    </p>
+    <p>
+    Este segundo readFile devuelve una nueva promesa.
+    </p>
+    <p>
+    •	Si hay un error, ejecuta el .catch
+    </p>
+    <p>
+    •	Si no, se ejecuta el segundo .then, que recibe el contenido del segundo archivo y lo muestra en consola.
+    </p>
+    <p>
+    Podremos encadenar tantos .then como necesitemos y ejecutar funciones que devuelvan promesas.
+    </p>
+    <p>
+    El siguiente es un ejemplo de promesa en cadena:
+    </p>
+    <p class="bold">
+    import { resolve } from 'path';
+    </p>
+    <p class="bold">
+    readFile('./texto.txt.')
+    </p>
+    <p class="bold margin-l">
+    .then(resolve)
+    </p>
+    <p class="bold margin-l">
+    .then(readFile)
+    </p>
+    <p class="bold margin-l">
+    .then(data => console.log(data))
+    </p>
+    <p class="bold margin-l">
+    .catch(error => console.error(error));
+    </p>
+    <p>
+    Las promesas en JavaScript son una herramienta que nos ayuda a manejar operaciones asincrónicas de manera eficiente. Por ello, usarlas de manera adecuada es fundamental para el correcto desarrollo de aplicaciones web, ya que son acciones que se resolverán a futuro (cuando se pueda) y que sabremos si se llevaron a cabo con éxito o no.
+    </p>
+    <p>
+    Así, las promesas son un componente importante dentro de la programación y su dominio es una habilidad valiosa para cualquier desarrollador. Además, su importancia se extiende hasta el ámbito del hosting web y los dominios, donde las operaciones asincrónicas y la eficiencia en la ejecución son clave para el funcionamiento óptimo de sitios web.
+    </p>
+    <p>
+    Podéis cosultar más información en los siguientes enlaces:
+    </p>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise">developer.mozilla.org</a>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Using_promises">developer.mozilla.org</a>
+    <a href="https://blog.hubspot.es/website/promesas-javascript">bolg.hubspot.es</a>
+
+    <div class="line"></div>
+
+    <h2>¿Qué hacen async y await por nosotros?</h2>
+
+    <p>
+    Async y await en JavaScript son dos palabras clave que nos permiten transformar un código asíncrono para que parezca ser síncrono. Estas palabras clave son muy utilizadas en el contexto de código realizado con promesas.
+    </p>
+    <p>
+    La palabra clave async en JavaScript se utiliza en una función para envolver el contenido de la función en una promesa.
+    </p>
+    <p>
+    La palabra clave await en JavScript nos permite definir una sección de la función a la cual el resto del código debe esperar. Es decir, con await definimos que el código restante de la función debe esperar a que esta sección se resuelva. Por ello, a nuestros ojos, el código se ejecutará de forma síncrona en la terminal. Si no utilizamos await en una función asincrónica, seguramente el código se ejecutará en desorden, pues el programa continuaría leyendo mientras espera al resultado de una función no inmediata.
+    </p>
+    <p>
+    Para ejemplificar cómo utilizar async y await en JavaScript, te ponemos un ejemplo. Suponsamos que tenemos la siguiente función doYouLoveMe, que guarda una promesa con el método setTimeout:
+    </p>
+    <p class="bold">
+    function doYouLoveMe (name) {
+    </p>
+    <p class="bold margin-l">
+    return new Promise (function (resolve, reject) {
+    </p>
+    <p class="bold margin-l-80">
+    console.log ('Let me think about it…')
+    </p>
+    <p class="bold margin-l-80">
+    setTimeout (() => {
+    </p>
+    <p class="bold margin-l-100">
+    if (name = 'Alberto') {
+    </p>
+    <p class="bold margin-l-120">
+    resolve ('Yes!') {
+    </p>
+    <p class="bold margin-l-100">
+    } else {
+    </p>
+    <p class="bold margin-l-120">
+    reject ('Sorry but no…')
+    </p>
+    <p class="bold margin-l-100">
+    }
+    </p>
+    <p class="bold margin-l-80">
+    }, 1000)
+    </p>
+    <p class="bold margin-l">
+    })
+    </p>
+    <p class="bold">
+    }
+    </p>    
+    <p>
+    Ahora, queremos gestionar esta promesa utilizando el método then. Esta define qué sucederá cuando la promesa salga bien y cuando la promesa salga mal:
+    </p>
+    <p class="bold">
+    function loveChecker () {
+    </p>
+    <p class="bold margin-l">
+    doYouLoveMe ('Alberto').then (response => {
+    </p>
+    <p class="bold margin-l-80">
+        console.log ('Alberto', response)
+    </p>
+    <p class="bold margin-l">
+    }, error => {
+    </p>
+    <p class="bold margin-l-80">
+    console.error ('Alberto', error)
+    </p>
+    <p class="bold margin-l">
+    })
+    </p>
+    <p class="bold">
+    doYouLoveMe ('Frodo').then (response => {
+    </p>
+    <p class="bold margin-l">
+        console.log ('Frodo', response)
+    </p>
+    <p class="bold margin-l">
+    }, error => {
+    </p>
+    <p class="bold margin-l-80">
+        console.error ('Frodo', error)
+    </p>
+    <p class="bold margin-l">
+    })
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Entonces, async y await en JavaScript nos permiten reformular nuestro código asíncrono para que parezca ser síncrono a nuestros ojos. Teniendo esto en cuenta, la sintaxis de la función loveChecker se transformaría de la siguiente manera utilizando las keywords async y await:
+    </p>
+    <p class="bold"> 
+    async function loveChecker () {
+    </p>
+    <p class="bold margin-l">  
+    try {
+    </p>
+    <p class="bold margin-l-80">
+    let response = await doYouLoveMe ('Alberto')
+    </p>
+    <p class="bold margin-l-80"> 
+    console.log ('Alberto', response)
+    </p>
+    <p class="bold margin-l">
+    } catche (error) {
+    </p>
+    <p class="bold margin-l-80"> 
+    console.error ('Alberto', error)
+    </p>
+    <p class="bold margin-l">
+    }
+    </p>
+    <p class="bold margin-l">
+    try {
+    </p>
+    <p class="bold margin-l-80">
+    response = await doYouLoveMe ('Frodo')
+    </p>
+    <p class="bold margin-l-80"></p>
+    console.log ('Frodo', response)
+    </p>
+    <p class="bold margin-l">
+    } catch (error) {
+    </p>
+    <p class="bold margin-l-80">
+    console.error ('Frodo', error)
+    </p>
+    <p class="bold margin-l">
+    }
+    </p>
+    <p class="bold">
+    }
+    </p>
+    <p>
+    Puedes advertir que lo primero que debemos hacer es insertar la palabra clave async antes de nuestra función asíncrona. Esto hará que la función esté envuelta en una promesa. Luego, hacemos que la respuesta se guarde en una variable. Es allí donde colocamos el await. En este caso, esta palabra clave está haciendo que el código espere a la resolución de la función doYouLoveMe.
+    </p>
+    <p>
+    Entonces, antes de ejecutar el console.log de la promesa original, debemos insertar algo como lo siguiente:
+    </p>
+    <p class="bold">
+    let response = await doYouLoveMe ('Alberto')
+    </p>
+    <p>
+    Esta línea de código reemplaza el método then de la promesa original.
+    </p>
+    <p>
+    A la práctica de lograr que el lenguaje haga cosas por nosotros usando ciertas palabras se le llama sugar syntax. En este caso, estamos haciendo sugar syntax porque utilizamos la palabra async para hacer que el lenguaje envuelva el contenido en una promesa de manera interna. Esta práctica nos quita muchos dolores de cabeza, pues soluciona los problemas que vienen con la asincronía. Uno de los mayores problemas que nos soluciona es el callback hell, creado por la anidación infinita de promesas o condicionales.
+    </p>
+    <p>
+    Tenéis más información sobre aync y await en los siguientes enlaces:
+    </p>
+    <a href="https://es.javascript.info/async-await">es.javascript.info</a>
+    <a href="https://keepcoding.io/blog/diferencia-entre-promesas-y-async-y-await/">keepcodin.io</a>
+    <a href="https://www.freecodecamp.org/espanol/news/tutorial-de-async-await-de-javascript/">freecodecamp.org</a>
+    <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/async_function">developer.mozilla.org</a>
+
+</body>
+</html>
